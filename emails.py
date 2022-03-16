@@ -15,8 +15,8 @@ def send_email():
         student = os.path.basename(file).replace(".","").split("pdf")[0].lstrip().rstrip()  # First character of series as String, erasing possible whitespaces and removing dot for 1st and 2nd grade files
 
         # Credentials
-        email_address = "notificaciones@sns.edu.do"
-        email_password = "SNS#391997"
+        email_address = input("Email address:")
+        email_password = input("Password:")
         try:
             recipient_email = (emails["Correo electrónico"][emails["Nombre y apellido del estudiante"] == student]).values[0].lstrip().rstrip()  # Email matched with student name, erasing possible whitespaces
         except:
